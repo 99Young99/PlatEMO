@@ -23,7 +23,7 @@ function Population = SCSparse(Problem,Population,L)
 
     %% Restrict the range
     x_maxmin = (Problem.upper-Problem.lower)';
-    for irange = 1:row_x %for every solution
+    for irange = 1:row_x % for every solution
         Upper_flag = Problem.upper<new_x(irange,:);
         Upper_flag_T = sum(Upper_flag);
         if Upper_flag_T > 0

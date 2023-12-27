@@ -16,6 +16,7 @@ classdef GUI < handle
         algList;            % Algorithm list
         proList;            % Problem list
         metList;            % Metric list
+        UseralgList;        % User-defined algorithm
     end
     methods
         %% Establish the figure window
@@ -117,6 +118,7 @@ classdef GUI < handle
             LabelStr    = {'none','single','multi','many','real','integer','label','binary','permutation','large','constrained','expensive','multimodal','sparse','dynamic','multitask','bilevel','robust'};
             obj.algList = obj.readList2('Algorithms',LabelStr);
             obj.proList = obj.readList2('Problems',LabelStr);
+            obj.UseralgList = obj.readList2('UserAlgorithms',LabelStr); % 增加文件夹 UserAlgorithms，自定义算法
             obj.metList = obj.readList2('Metrics',[LabelStr,'min','max']);
         end
         function List = readList2(obj,folder,LabelStr)
